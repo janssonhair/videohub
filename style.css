@@ -99,3 +99,28 @@ display:inline-block;
 .card:hover{
     transform:translateY(-5px);
 }
+.info{
+    padding:15px;
+}
+
+
+.info h3{
+    margin:0 0 10px;
+    font-size:20px;
+}
+
+
+.info p{
+    color:#aaa;
+}
+
+
+.info a{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 18px;
+    background:white;
+    color:black;
+    border-radius:20px;
+    text-decoration:none;
+}
