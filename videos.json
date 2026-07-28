@@ -1,14 +1,16 @@
 [
  {
-  "title":"美女假发展示视频",
+  "title":"新款假发展示",
   "category":"美容",
-  "cover":"https://你的图片地址.jpg",
-  "url":"https://www.youtube.com/watch?v=123456"
+  "cover":"https://picsum.photos/500",
+  "url":"https://youtube.com",
+  "description":"2026新品假发展示视频"
  },
  {
   "title":"假发佩戴教程",
   "category":"教程",
-  "cover":"https://你的图片地址2.jpg",
-  "url":"https://www.youtube.com/watch?v=456789"
+  "cover":"https://picsum.photos/501",
+  "url":"https://youtube.com",
+  "description":"假发安装方法"
  }
 ]
