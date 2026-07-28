@@ -1,51 +1,43 @@
-let videos = [];
+async function loadVideos(){
+
+    const response = await fetch("videos.json");
+
+    const videos = await response.json();
+
+    const box = document.getElementById("videos");
+
+    box.innerHTML = "";
 
 
-fetch("videos.json")
-.then(res => res.json())
-.then(data => {
+    videos.forEach(v => {
 
-videos = data;
+        box.innerHTML += `
 
-showVideos(videos);
+        <div class="card">
 
-});
+            <img src="${v.cover}">
 
+            <div class="info">
 
+                <h3>${v.title}</h3>
 
-function showVideos(list){
+                <p>${v.category}</p>
 
-let box=document.getElementById("videos");
+                <p>${v.description}</p>
 
-box.innerHTML="";
+                <a href="${v.url}" target="_blank">
+                    ▶ 播放视频
+                </a>
 
+            </div>
 
-list.forEach(v=>{
+        </div>
 
+        `;
 
-box.innerHTML += `
-
-<div class="card">
-
-<img src="${v.cover}">
-
-<div class="info">
-
-<h3>${v.title}</h3>
-
-<p>${v.category}</p>
-
-<a href="${v.url}" target="_blank">
-▶ 播放视频
-</a>
-
-</div>
-
-</div>
-
-`;
-
-});
-
+    });
 
 }
+
+
+loadVideos();
