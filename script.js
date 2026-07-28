@@ -1,5 +1,6 @@
 const SUPABASE_URL = "https://dxvhibiteowkjfiadeu.supabase.co";
-const SUPABASE_KEY = "sb_publishable_QKWrisOZxBkl1k59dMbfeQ_FbCeIEbx";
+
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR4dmhoaWJpdGVvd2tqZmlhZGV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUyMDc0OTEsImV4cCI6MjEwMDc4MzQ5MX0.LOHFJW5L78bOnjyiim9ZbKa9edvShpuO7ZpG1Oy2O48";
 
 
 async function loadVideos(){
@@ -8,8 +9,8 @@ const response = await fetch(
 `${SUPABASE_URL}/rest/v1/videos`,
 {
 headers:{
-apikey:SUPABASE_KEY,
-
+apikey: SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
 }
 }
 );
@@ -18,7 +19,7 @@ apikey:SUPABASE_KEY,
 const videos = await response.json();
 
 
-let box=document.getElementById("videos");
+let box = document.getElementById("videos");
 
 box.innerHTML="";
 
