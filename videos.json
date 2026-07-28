@@ -4,13 +4,21 @@
   "category":"美容",
   "cover":"https://picsum.photos/500",
   "url":"https://youtube.com",
-  "description":"2026新品假发展示视频"
+  "description":"2026新品假发展示视频",
+  "channel":"假发之家",
+  "avatar":"https://picsum.photos/50",
+  "views":"1.2万次观看",
+  "time":"2天前"
  },
  {
   "title":"假发佩戴教程",
   "category":"教程",
   "cover":"https://picsum.photos/501",
   "url":"https://youtube.com",
-  "description":"假发安装方法"
+  "description":"假发安装方法",
+  "channel":"美发课堂",
+  "avatar":"https://picsum.photos/51",
+  "views":"5600次观看",
+  "time":"5天前"
  }
 ]
