@@ -1,40 +1,125 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
-<title>VideoHub 视频导航</title>
+
+<title>VideoHub</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<header>
 
-<h1>🎬 VideoHub</h1>
+<!-- 顶部导航 -->
+
+<header class="topbar">
+
+
+<div class="logo">
+☰ 🎬 VideoHub
+</div>
+
 
 <input 
 id="search"
 placeholder="搜索视频..."
 >
 
+
+<div class="user">
+👤
+</div>
+
+
 </header>
+
+
+
+<!-- 主体 -->
+
+<div class="layout">
+
+
+
+<!-- 左侧菜单 -->
+
+<aside class="sidebar">
+
+<div>🏠 首页</div>
+
+<div>🔥 热门</div>
+
+<div>📺 订阅</div>
+
+<div>🕒 历史</div>
+
+<div>⭐ 收藏</div>
+
+
+<hr>
+
+
+<h4>分类</h4>
+
+
+<div>假发</div>
+
+<div>美容</div>
+
+<div>教程</div>
+
+<div>买家秀</div>
+
+<div>电商</div>
+
+
+</aside>
+
+
+
+
+<!-- 视频区域 -->
+
+<main>
 
 
 <div class="category">
 
 <button>全部</button>
-<button>电影</button>
-<button>教程</button>
+
+<button>假发</button>
+
 <button>美容</button>
-<button>娱乐</button>
+
+<button>教程</button>
+
+<button>电商</button>
 
 </div>
+
 
 
 <div id="videos"></div>
 
 
+
+</main>
+
+
+
+</div>
+
+
+
 <script src="script.js"></script>
 
+
 </body>
+
+
 </html>
