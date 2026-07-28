@@ -29,22 +29,21 @@ box.innerHTML += `
 
 <img src="${v.cover}">
 
+<div class="info">
+
 <h3>${v.title}</h3>
 
 <p>${v.category}</p>
 
-
 <a href="${v.url}" target="_blank">
-
 ▶ 播放视频
-
 </a>
 
+</div>
 
 </div>
 
 `;
-
 
 });
 
