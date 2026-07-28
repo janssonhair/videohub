@@ -1,26 +1,31 @@
-﻿let data=[];
+const SUPABASE_URL = "https://dxvhibiteowkjfiadeu.supabase.co";
+const SUPABASE_KEY = "sb_publishable_QKWrisOZxBkl1k59dMbfeQ_FbCeIEbx";
 
 
-fetch("videos.json")
-.then(res=>res.json())
-.then(videos=>{
+async function loadVideos(){
 
-data=videos;
-show(videos);
+const response = await fetch(
+`${SUPABASE_URL}/rest/v1/videos`,
+{
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:`Bearer ${SUPABASE_KEY}`
+}
+}
+);
 
-});
 
+const videos = await response.json();
 
-function show(list){
 
 let box=document.getElementById("videos");
 
 box.innerHTML="";
 
 
-list.forEach(v=>{
+videos.forEach(v=>{
 
-box.innerHTML+=`
+box.innerHTML += `
 
 <div class="card">
 
@@ -30,11 +35,8 @@ box.innerHTML+=`
 
 <p>${v.category}</p>
 
-
 <a href="${v.url}" target="_blank">
-
 ▶ 播放视频
-
 </a>
 
 </div>
@@ -43,25 +45,8 @@ box.innerHTML+=`
 
 });
 
-}
-
-
-
-document
-.getElementById("search")
-.onkeyup=function(){
-
-let key=this.value;
-
-
-let result=data.filter(v=>
-
-v.title.includes(key)
-
-);
-
-
-show(result);
-
 
 }
+
+
+loadVideos();
