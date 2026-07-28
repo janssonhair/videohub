@@ -97,3 +97,67 @@ button{
     border-radius:20px;
     text-decoration:none;
 }
+/* YouTube 风格频道区域 */
+.channel{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+
+.avatar{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
+/* 视频缩略图 */
+.cover{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+
+/* 视频信息 */
+.meta{
+    color:#999;
+    font-size:14px;
+}
+
+
+/* 标题优化 */
+.info h3{
+    font-size:17px;
+    line-height:1.4;
+}
+
+
+/* 视频墙更像YouTube */
+#videos{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;
+    padding:30px;
+}
+
+
+/* 手机适配 */
+@media(max-width:768px){
+
+    #videos{
+        grid-template-columns:repeat(2,1fr);
+        padding:15px;
+        gap:15px;
+    }
+
+
+    input{
+        width:90%;
+    }
+
+}
