@@ -27,15 +27,25 @@ margin:20px;
 
 
 button{
+    cursor:pointer;
+    border:none;
+    padding:10px 25px;
+    border-radius:30px;
+    margin:5px;
+}
 padding:10px 20px;
 margin:5px;
 border-radius:20px;
 cursor:pointer;
 }
-
-
 #videos{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
 
+    gap:25px;
+    padding:40px;
+}
 display:grid;
 grid-template-columns:
 repeat(auto-fit,minmax(250px,1fr));
@@ -46,14 +56,19 @@ padding:30px;
 }
 .card{
     background:#222;
-    border-radius:15px;
+     border-radius:15px;
     overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 
 .card img{
     width:100%;
-    height:260px;
+    .card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
     object-fit:cover;
 }
 .card h3{
