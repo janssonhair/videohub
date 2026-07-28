@@ -1,8 +1,14 @@
-﻿[
+[
  {
- "title":"测试视频",
- "category":"教程",
- "cover":"https://picsum.photos/400",
- "url":"https://www.youtube.com"
+  "title":"美女假发展示视频",
+  "category":"美容",
+  "cover":"https://你的图片地址.jpg",
+  "url":"https://www.youtube.com/watch?v=123456"
+ },
+ {
+  "title":"假发佩戴教程",
+  "category":"教程",
+  "cover":"https://你的图片地址2.jpg",
+  "url":"https://www.youtube.com/watch?v=456789"
  }
 ]
