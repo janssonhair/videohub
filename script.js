@@ -9,7 +9,7 @@ const response = await fetch(
 {
 headers:{
 apikey:SUPABASE_KEY,
-Authorization:`Bearer ${SUPABASE_KEY}`
+
 }
 }
 );
