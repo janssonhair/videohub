@@ -4,15 +4,11 @@ let allVideos=[];
 
 async function loadVideos(){
 
-
-const res=await fetch("videos.json");
-
+let res=await fetch("videos.json");
 
 allVideos=await res.json();
 
-
 showVideos(allVideos);
-
 
 }
 
@@ -32,7 +28,7 @@ list.forEach(v=>{
 
 box.innerHTML+=`
 
-<div class="card">
+<div class="card" onclick="openVideo(${v.id})">
 
 
 <img class="cover" src="${v.cover}">
@@ -60,18 +56,10 @@ ${v.views} · ${v.time}
 </p>
 
 
-<p>
-
-${v.description}
-
-</p>
-
-
 </div>
 
 
 </div>
-
 
 `;
 
@@ -83,12 +71,10 @@ ${v.description}
 
 
 
+function filterCategory(c){
 
 
-function filterCategory(category){
-
-
-if(category==="全部"){
+if(c=="全部"){
 
 showVideos(allVideos);
 
@@ -97,18 +83,14 @@ return;
 }
 
 
-let result=allVideos.filter(v=>
+showVideos(
 
-v.category===category
+allVideos.filter(v=>v.category==c)
 
 );
 
 
-showVideos(result);
-
-
 }
-
 
 
 
@@ -117,23 +99,20 @@ document.getElementById("search")
 .addEventListener("input",function(){
 
 
-let key=this.value.toLowerCase();
+let k=this.value.toLowerCase();
 
 
-let result=allVideos.filter(v=>{
+showVideos(
 
+allVideos.filter(v=>
 
-return (
+v.title.toLowerCase().includes(k)
 
-v.title.toLowerCase().includes(key)
+||v.channel.toLowerCase().includes(k)
 
-||
+||v.category.toLowerCase().includes(k)
 
-v.category.toLowerCase().includes(key)
-
-||
-
-v.channel.toLowerCase().includes(key)
+)
 
 );
 
@@ -141,11 +120,12 @@ v.channel.toLowerCase().includes(key)
 });
 
 
-showVideos(result);
 
+function openVideo(id){
 
-});
+location.href="video.html?id="+id;
 
+}
 
 
 
