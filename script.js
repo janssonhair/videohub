@@ -1,149 +1,151 @@
-let allVideos = [];
+let allVideos=[];
 
 
-// 加载视频
 
 async function loadVideos(){
 
-    const response = await fetch("videos.json");
 
-    allVideos = await response.json();
-
-    showVideos(allVideos);
-
-}
+const res=await fetch("videos.json");
 
 
-
-// 显示视频
-
-function showVideos(videos){
-
-    const box = document.getElementById("videos");
-
-    box.innerHTML = "";
+allVideos=await res.json();
 
 
-    videos.forEach(v=>{
-
-
-        box.innerHTML += `
-
-        <div class="card">
-
-
-            <img class="cover" src="${v.cover}">
-
-
-            <div class="info">
-
-
-                <div class="channel">
-
-                    <img class="avatar" src="${v.avatar}">
-
-                    <span>${v.channel}</span>
-
-                </div>
-
-
-
-                <h3>${v.title}</h3>
-
-
-                <p class="meta">
-                ${v.views} · ${v.time}
-                </p>
-
-
-                <p>
-                ${v.description}
-                </p>
-
-
-                <a href="${v.url}" target="_blank">
-                ▶ 播放视频
-                </a>
-
-
-            </div>
-
-
-        </div>
-
-        `;
-
-
-    });
+showVideos(allVideos);
 
 
 }
 
 
 
-// 搜索功能
-
-document.getElementById("search")
-.addEventListener("input",function(){
+function showVideos(list){
 
 
-    let keyword=this.value.toLowerCase();
+let box=document.getElementById("videos");
 
 
-    let result=allVideos.filter(v=>{
+box.innerHTML="";
 
 
-        return (
-
-        v.title.toLowerCase().includes(keyword)
-
-        ||
-
-        v.category.toLowerCase().includes(keyword)
-
-        ||
-
-        v.channel.toLowerCase().includes(keyword)
-
-        );
+list.forEach(v=>{
 
 
-    });
+box.innerHTML+=`
+
+<div class="card">
 
 
-    showVideos(result);
+<img class="cover" src="${v.cover}">
+
+
+<div class="info">
+
+
+<div class="channel">
+
+<img class="avatar" src="${v.avatar}">
+
+<span>${v.channel}</span>
+
+</div>
+
+
+<h3>${v.title}</h3>
+
+
+<p class="meta">
+
+${v.views} · ${v.time}
+
+</p>
+
+
+<p>
+
+${v.description}
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+`;
 
 
 });
 
 
+}
 
 
-// 分类筛选
+
+
 
 function filterCategory(category){
 
 
-    if(category==="全部"){
+if(category==="全部"){
 
-        showVideos(allVideos);
+showVideos(allVideos);
 
-        return;
+return;
 
-    }
-
-
-    let result=allVideos.filter(v=>
-
-        v.category===category
-
-    );
+}
 
 
-    showVideos(result);
+let result=allVideos.filter(v=>
+
+v.category===category
+
+);
+
+
+showVideos(result);
 
 
 }
+
+
+
+
+
+document.getElementById("search")
+.addEventListener("input",function(){
+
+
+let key=this.value.toLowerCase();
+
+
+let result=allVideos.filter(v=>{
+
+
+return (
+
+v.title.toLowerCase().includes(key)
+
+||
+
+v.category.toLowerCase().includes(key)
+
+||
+
+v.channel.toLowerCase().includes(key)
+
+);
+
+
+});
+
+
+showVideos(result);
+
+
+});
+
 
 
 
