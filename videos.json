@@ -1,18 +1,24 @@
 [
  {
+  "id":1,
   "title":"新款假发展示",
   "category":"美容",
   "cover":"https://picsum.photos/500",
+  "video":"https://www.w3schools.com/html/mov_bbb.mp4",
   "description":"2026新品假发展示视频",
   "channel":"假发之家",
   "avatar":"https://picsum.photos/50",
   "views":"1.2万次观看",
   "time":"2天前"
  },
+
+
  {
+  "id":2,
   "title":"假发佩戴教程",
   "category":"教程",
   "cover":"https://picsum.photos/501",
+  "video":"https://www.w3schools.com/html/movie.mp4",
   "description":"假发安装方法",
   "channel":"美发课堂",
   "avatar":"https://picsum.photos/51",
