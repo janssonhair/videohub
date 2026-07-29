@@ -15,8 +15,6 @@
 <body>
 
 
-<!-- 顶部导航 -->
-
 <header class="topbar">
 
 
@@ -40,15 +38,12 @@ placeholder="搜索视频..."
 
 
 
-<!-- 主体 -->
-
 <div class="layout">
 
 
 
-<!-- 左侧菜单 -->
-
 <aside class="sidebar">
+
 
 <div>🏠 首页</div>
 
@@ -65,6 +60,11 @@ placeholder="搜索视频..."
 
 
 <h4>分类</h4>
+
+
+<div onclick="filterCategory('全部')">
+全部
+</div>
 
 
 <div onclick="filterCategory('假发')">
@@ -97,14 +97,11 @@ placeholder="搜索视频..."
 
 
 
-<!-- 视频区域 -->
-
 <main>
 
 
 <div class="category">
 
-<div class="category">
 
 <button onclick="filterCategory('全部')">
 全部
@@ -130,6 +127,7 @@ placeholder="搜索视频..."
 电商
 </button>
 
+
 </div>
 
 
@@ -137,9 +135,7 @@ placeholder="搜索视频..."
 <div id="videos"></div>
 
 
-
 </main>
-
 
 
 </div>
@@ -150,6 +146,5 @@ placeholder="搜索视频..."
 
 
 </body>
-
 
 </html>
